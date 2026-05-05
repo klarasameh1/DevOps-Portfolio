@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./nodeapp/frontend:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/default.conf
+    ports:
+      - "8080:80"
+
+  api:
+    build: ./nodeapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
