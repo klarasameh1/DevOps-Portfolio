@@ -18,8 +18,8 @@ jobs:
       - name: Validate project structure
         run: |
           echo "Checking required files..."
-          test -f src/index.html
-          test -f src/style.css
+          test -f nodeapp/frontend/index.html
+          test -f nodeapp/frontend/style.css
           echo "All required files exist ✔"
 
       # 3️⃣ CI: Lint (basic check)
@@ -34,7 +34,7 @@ jobs:
           echo "Building project..."
           rm -rf docs
           mkdir docs
-          cp src/* docs/
+          cp nodeapp/frontend/* docs/
           echo "Build complete ✔"
 
       # 5️⃣ CD: Deploy
