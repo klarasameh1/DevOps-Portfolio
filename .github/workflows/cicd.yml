@@ -8,13 +8,13 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      # 1️⃣ Checkout
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # 2️⃣ CI: Validate files
       - name: Validate project structure
         run: |
           echo "Checking required files..."
@@ -22,13 +22,11 @@ jobs:
           test -f nodeapp/frontend/style.css
           echo "All required files exist ✔"
 
-      # 3️⃣ CI: Lint (basic check)
       - name: Lint HTML (basic)
         run: |
           echo "Basic HTML check"
           grep -q "<html" nodeapp/frontend/index.html
 
-      # 4️⃣ CI: Simulate build step
       - name: Build step
         run: |
           echo "Building project..."
@@ -37,7 +35,6 @@ jobs:
           cp nodeapp/frontend/* docs/
           echo "Build complete ✔"
 
-      # 5️⃣ CD: Deploy
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
