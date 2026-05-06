@@ -149,7 +149,6 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.8rem;
-    /* background: rgba(0, 0, 0, 0.4); */
     padding: 0.6rem 1rem;
     border-radius: 50px;
     margin: 1rem 0;
@@ -285,6 +284,74 @@ h3 {
 .exp-item li::before {
     content: "▹";
     color: var(--cyan);
+}
+
+/* ========== CERTIFICATIONS ========== */
+.cert-item {
+    margin-bottom: 1.2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+}
+
+.cert-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cert-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.6rem;
+}
+
+.cert-icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(124, 58, 237, 0.15);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    border-radius: 10px;
+    font-size: 1.1rem;
+    color: #b794f4;
+    flex-shrink: 0;
+}
+
+.cert-info h3 {
+    margin: 0 0 0.2rem 0;
+    font-size: 1rem;
+}
+
+.cert-issuer {
+    font-size: 0.75rem;
+    color: var(--dim);
+    margin: 0;
+}
+
+.cert-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.cert-link {
+    color: var(--dim);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: 0.2s;
+}
+
+.cert-link:hover {
+    opacity: 0.75;
 }
 
 /* ========== PROJECTS ========== */
@@ -471,6 +538,10 @@ footer {
     .project-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .cert-header {
+        flex-direction: row;
     }
 }
 

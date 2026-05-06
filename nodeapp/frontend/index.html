@@ -11,20 +11,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script>
-    async function loadVisits() {
-        try {
-            const res = await fetch('/api/visits')
-            const data = await res.json();
-            document.getElementById('counter').innerText = `👀 ${data.visits} visits`;
-        } catch (err) {
-            document.getElementById('counter').innerText = "Error loading counter";
-        }
-    }
-
-    loadVisits();
-</script>
-
 <body>
     <div class="bg-gradient"></div>
 
@@ -50,6 +36,10 @@
                             GitHub</a>
                         <a href="https://www.linkedin.com/in/klara-sameh" target="_blank"><i
                                 class="fab fa-linkedin"></i> LinkedIn</a>
+                        <!-- 🏅 Codeforces -->
+                        <a href="https://codeforces.com/profile/klarasameh" target="_blank">
+                            <i class="fas fa-code"></i> Codeforces
+                        </a>
                     </div>
                     <a href="https://drive.google.com/uc?export=download&id=1XB4__Hsv824aVQC1pqtjKCA75KOXJOtO" download
                         class="btn-outline">
@@ -64,9 +54,12 @@
         <section class="card">
             <div class="section-icon"><i class="fas fa-user-astronaut"></i></div>
             <h2>Summary</h2>
-            <p>Fresh DevOps enthusiast with strong foundation in Linux, Git, Docker, Bash & Python. Experienced in
-                containerizing applications and building CI/CD pipelines. Seeking DevOps internship to contribute to
-                real-world deployment workflows.</p>
+            <p>Junior DevOps enthusiast with a strong foundation in Linux, Git, Docker, and automation using Bash &
+                Python.
+                Experienced in containerizing applications and building basic CI/CD pipelines. Passionate about
+                infrastructure
+                automation and continuous deployment practices. Seeking a DevOps internship to contribute to real-world
+                deployment workflows and cloud-native projects.</p>
         </section>
 
         <!-- ========== TWO COLUMNS ========== -->
@@ -81,9 +74,36 @@
                     <h2>Education</h2>
                     <div class="edu-item">
                         <h3>Cairo University</h3>
-                        <p>Faculty of Computers and AI · CS Department</p>
+                        <p>Faculty of Computers and Artificial intelligence · CS Department</p>
                         <span class="date-chip">2023 – 2027</span>
                     </div>
+                </section>
+
+                <!-- ========== CERTIFICATIONS ========== -->
+                <section class="card">
+                    <div class="section-icon"><i class="fas fa-certificate"></i></div>
+                    <h2>Certifications</h2>
+
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-award"></i></div>
+                            <div class="cert-info">
+                                <h3>DevOps Learning Path</h3>
+                                <p class="cert-issuer">Manara</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-header">
+                            <div class="cert-icon"><i class="fas fa-award"></i></div>
+                            <div class="cert-info">
+                                <h3>AI Career Essentials</h3>
+                                <p class="cert-issuer">Alx</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add new certifications here 🚨🚨🚨 -->
                 </section>
 
                 <!-- Skills -->
@@ -134,6 +154,32 @@
                 <section class="card">
                     <div class="section-icon"><i class="fas fa-cubes"></i></div>
                     <h2>Projects</h2>
+
+                    <div class="project-item">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fas fa-infinity"></i></div>
+                            <div class="project-info">
+                                <h3>CI/CD Portfolio Automation</h3>
+                                <div class="tech-stack">
+                                    <span>GitHub Actions</span> <span>CI/CD</span> <span>HTML/CSS</span> <span>GitHub
+                                        Pages</span>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="project-details">
+                            <li>Designed and implemented a CI/CD pipeline using GitHub Actions</li>
+                            <li>Automated validation, linting, and build process for frontend assets</li>
+                            <li>Deployed portfolio automatically to GitHub Pages on every push</li>
+                            <li>Structured project with separation between source and deployment (src → docs)</li>
+                        </ul>
+                        <div class="repo-link">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/klarasameh1/DevOps-Portfolio" target="_blank"
+                                class="btn-outline">
+                                View Project <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
 
                     <div class="project-item">
                         <div class="project-header">
@@ -197,10 +243,15 @@
                 <a href="https://www.linkedin.com/in/klara-sameh" target="_blank"><i class="fab fa-linkedin"></i>
                     LinkedIn</a>
                 <a href="mailto:klarasameh39@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <!-- 🏅 Codeforces in footer -->
+                <a href="https://codeforces.com/profile/klarasameh" target="_blank">
+                    <i class="fas fa-code"></i> Codeforces
+                </a>
             </div>
             <div class="copyright">© 2026 Klara Sameh · DevOps Portfolio</div>
         </footer>
     </div>
+
     <script>
         async function loadVisits() {
             try {
@@ -211,7 +262,6 @@
                 document.getElementById('counter').innerText = "Error loading counter";
             }
         }
-
         loadVisits();
     </script>
 </body>
