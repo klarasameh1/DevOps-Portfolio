@@ -26,7 +26,7 @@ jobs:
       - name: Lint HTML (basic)
         run: |
           echo "Basic HTML check"
-          grep -q "<html" src/index.html
+          grep -q "<html" nodeapp/frontend/index.html
 
       # 4️⃣ CI: Simulate build step
       - name: Build step
