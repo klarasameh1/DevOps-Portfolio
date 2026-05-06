@@ -2,26 +2,44 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      # 1️⃣ Checkout
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Deploy to Server
-      uses: appleboy/ssh-action@v1.0.3      
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_KEY }}
-        script: |
-          whoami
-          pwd
-          cd ~/portifolio-pipelined
-          git pull
-          docker compose down
-          docker compose up -d --build
+      # 2️⃣ CI: Validate files
+      - name: Validate project structure
+        run: |
+          echo "Checking required files..."
+          test -f src/index.html
+          test -f src/style.css
+          echo "All required files exist ✔"
+
+      # 3️⃣ CI: Lint (basic check)
+      - name: Lint HTML (basic)
+        run: |
+          echo "Basic HTML check"
+          grep -q "<html" src/index.html
+
+      # 4️⃣ CI: Simulate build step
+      - name: Build step
+        run: |
+          echo "Building project..."
+          rm -rf docs
+          mkdir docs
+          cp src/* docs/
+          echo "Build complete ✔"
+
+      # 5️⃣ CD: Deploy
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
