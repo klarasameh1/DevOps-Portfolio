@@ -35,7 +35,7 @@ jobs:
           rm -rf docs
           mkdir docs
           cp nodeapp/frontend/* docs/
-          echo "Build completed ✔"
+          echo "Build complete ✔"
 
       # 5️⃣ CD: Deploy
       - name: Deploy to GitHub Pages
