@@ -354,6 +354,33 @@ h3 {
     opacity: 0.75;
 }
 
+.cert-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+    padding: 0.35rem 0.9rem;
+
+    background: rgba(0, 212, 255, 0.08);
+    border: 1px solid rgba(0, 212, 255, 0.25);
+
+    border-radius: 30px;
+    text-decoration: none;
+
+    color: #a5f3ff;
+    font-size: 0.72rem;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+.cert-btn:hover {
+    background: rgba(0, 212, 255, 0.18);
+    border-color: rgba(0, 212, 255, 0.5);
+
+    transform: translateY(-1px);
+    color: white;
+}
 /* ========== PROJECTS ========== */
 .project-item {
     margin-bottom: 1.5rem;
